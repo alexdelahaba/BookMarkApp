@@ -5,8 +5,8 @@ Thanks to this application we can make bookmark management. You can create and d
 ### Installation 🔧
 
 To be able to use the application you have to clone the repository to local and to run it:
-npm install
-ng serve
+* npm install
+* ng serve
 
 ## Build with 🛠️
 
