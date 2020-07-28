@@ -1,0 +1,46 @@
+<div class="container mt-3">
+  <h1>Form to create a new bookmark</h1>
+  <form class="example-form"
+        [formGroup]="myForm"
+        autocomplete="off"
+        #formDirective="ngForm"
+        (ngSubmit)="saveBookmark(myForm, formDirective)">
+    <mat-form-field class="example-full-width ml-5">
+      <mat-label>Name</mat-label>
+      <input matInput
+             formControlName="name"
+             placeholder="Name of the bookmark">
+
+      <mat-error *ngIf="myForm.controls.name.touched && myForm.controls.name.status === 'INVALID'">
+        Name is <strong>required</strong> and its minimum length is 5.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width ml-5">
+      <mat-label>URL</mat-label>
+      <input matInput
+             formControlName="url"
+             placeholder="URL of the bookmark">
+
+      <mat-error *ngIf="myForm.controls.url.touched && myForm.controls.url.status === 'INVALID'">
+        URL is <strong>required</strong> and its minimum length is 5.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width ml-5">
+      <mat-label>Group</mat-label>
+      <input matInput
+             formControlName="group"
+             placeholder="Group of the bookmark">
+
+      <mat-error *ngIf="myForm.controls.group.touched && myForm.controls.group.status === 'INVALID'">
+        Group is <strong>required</strong> and its minimum length is 5.
+      </mat-error>
+    </mat-form-field>
+    <button type="submit"
+            class="ml-5 mt-3"
+            mat-raised-button
+            color="primary">Save</button>
+  </form>
+
+</div>
