@@ -18,7 +18,9 @@ To be able to use the application you have to clone the repository to local and 
 
 The app is very simple but its interface is quite innovative. It consists of two panels, the left one is used to navigate between components and the right one is the content of the page.
 
-## Screenshots
+## Screenshots 
 ![alt text](https://github.com/alexdelahaba/BookMarkApp/blob/master/src/assets/screenshots/1.PNG?raw=true)
+![alt text](https://github.com/alexdelahaba/BookMarkApp/blob/master/src/assets/screenshots/2.PNG?raw=true)
+![alt text](https://github.com/alexdelahaba/BookMarkApp/blob/master/src/assets/screenshots/3.PNG?raw=true)
 
 
