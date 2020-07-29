@@ -1,6 +1,8 @@
 # BookmarkApp 🚀
 
 Thanks to this application we can make bookmark management. You can create and delete them.
+The app can be used directly from this link: https://alexdelahaba.github.io/BookMarkApp/index.html
+It has been deployed thanks to Github pages.
 
 ### Installation 🔧
 
