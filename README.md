@@ -24,5 +24,8 @@ The app is very simple but its interface is quite innovative. It consists of two
 ![alt text](https://github.com/alexdelahaba/BookMarkApp/blob/master/src/assets/screenshots/1.PNG?raw=true)
 ![alt text](https://github.com/alexdelahaba/BookMarkApp/blob/master/src/assets/screenshots/2.PNG?raw=true)
 ![alt text](https://github.com/alexdelahaba/BookMarkApp/blob/master/src/assets/screenshots/3.PNG?raw=true)
+![alt text](https://github.com/alexdelahaba/BookMarkApp/blob/master/src/assets/screenshots/4.PNG?raw=true)
+![alt text](https://github.com/alexdelahaba/BookMarkApp/blob/master/src/assets/screenshots/5.PNG?raw=true)
+![alt text](https://github.com/alexdelahaba/BookMarkApp/blob/master/src/assets/screenshots/6.PNG?raw=true)
 
 
