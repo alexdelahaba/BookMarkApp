@@ -1,26 +1,23 @@
 <div class="container m-5">
   <div class="row">
-
-    <div class="card text-center mt-3"
-         *ngFor="let item of bookmarks"
-         style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">{{item.name}}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">{{item.group}}</h6>
-
-        <a href="#"
-           class="card-link"
-           [href]="item.url">{{item.url}}</a>
-
-        <hr>
-        <button mat-mini-fab
-                (click)="deleteBookmark(item)"
-                color="accent">
-          <mat-icon>delete</mat-icon>
-        </button>
-
+    <div *ngFor="let array of bookmarks">
+      <h1 class="text-center font-weight-bold mt-3">{{array[0].group | titlecase}}</h1>
+      <div class="card text-center mt-3 ml-2 mr-2"
+           *ngFor="let item of array"
+           style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{item.name}}</h5>
+          <a href="#"
+             class="card-link"
+             [href]="item.url">{{item.url}}</a>
+          <hr>
+          <button mat-mini-fab
+                  (click)="deleteBookmark(item)"
+                  color="accent">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
       </div>
-
     </div>
   </div>
 </div>
