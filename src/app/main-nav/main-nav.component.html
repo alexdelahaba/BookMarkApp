@@ -9,10 +9,10 @@
     <mat-nav-list>
       <a mat-list-item
          [ngClass]="{'selected': showDisplay === true}"
-         (click)="showDisplay = !showDisplay; showEdit = false">Display bookmarks</a>
+         (click)="showDisplay = true; showEdit = false">Display bookmarks</a>
       <a mat-list-item
          [ngClass]="{'selected': showEdit === true}"
-         (click)="showEdit = !showEdit; showDisplay = false">Add bookmarks</a>
+         (click)="showEdit = true; showDisplay = false">Add bookmarks</a>
 
     </mat-nav-list>
   </mat-sidenav>
@@ -27,7 +27,8 @@
       </button>
       <span>Bookmarks App</span>
     </mat-toolbar>
-    <app-display *ngIf="showDisplay"></app-display>
+    <app-display *ngIf="showDisplay"
+                 (changeTab)='changeTabToAdd($event)'></app-display>
     <app-edit *ngIf="showEdit"></app-edit>
   </mat-sidenav-content>
 </mat-sidenav-container>

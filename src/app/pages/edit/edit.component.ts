@@ -44,4 +44,10 @@ export class EditComponent implements OnInit {
       this.myForm.reset();
     }
   }
+
+  resetForm(formDirective: FormGroupDirective, event) {
+    event.preventDefault();
+    formDirective.resetForm();
+    this.myForm.reset();
+  }
 }

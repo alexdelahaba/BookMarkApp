@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as Actions from './../../actions/app.actions';
 import { AppState } from 'src/app/app.state';
 import { BookMark } from '../../models/bookmark.interface';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from '../../components/dialog/dialog.component';
 
 @Component({
   selector: 'app-display',
@@ -11,7 +13,9 @@ import { BookMark } from '../../models/bookmark.interface';
 })
 export class DisplayComponent {
   bookmarks: BookMark[] = [];
-  constructor(private store: Store<AppState>) {
+  @Output() changeTab = new EventEmitter();
+
+  constructor(private store: Store<AppState>, public dialog: MatDialog) {
     this.showData();
   }
 
@@ -20,12 +24,21 @@ export class DisplayComponent {
       if (resp && resp.length > 0) {
         const arrayBookmarks = resp.filter((item) => item.name.length > 0);
         this.bookmarks = this.groupBy(arrayBookmarks, 'group');
+      } else {
+        this.bookmarks = [];
       }
     });
   }
 
   deleteBookmark(bookmark: BookMark) {
-    this.store.dispatch(new Actions.DeleteBookmark(bookmark));
+    const dialogRef = this.dialog.open(DialogComponent);
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.store.dispatch(new Actions.DeleteBookmark(bookmark));
+      } else {
+        return;
+      }
+    });
   }
 
   groupBy(collection: BookMark[], property: string) {
@@ -45,5 +58,9 @@ export class DisplayComponent {
       }
     }
     return result;
+  }
+
+  changeToEditTab(changingBoolean: string) {
+    this.changeTab.emit(changingBoolean);
   }
 }

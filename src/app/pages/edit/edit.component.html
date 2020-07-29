@@ -1,5 +1,5 @@
 <div class="container mt-3">
-  <h1>Form to create a new bookmark</h1>
+  <h1>Create a new bookmark</h1>
   <form class="example-form"
         [formGroup]="myForm"
         autocomplete="off"
@@ -40,7 +40,15 @@
     <button type="submit"
             class="ml-5 mt-3"
             mat-raised-button
+            matTooltip="Save the bookmark"
             color="primary">Save</button>
+    <button mat-mini-fab
+            class="ml-3"
+            color="primary"
+            matTooltip="Reset the data"
+            (click)="resetForm(formDirective, $event)">
+      <mat-icon>autorenew</mat-icon>
+    </button>
   </form>
 
 </div>

@@ -1,5 +1,6 @@
 <div class="container m-5">
-  <div class="row">
+  <div class="row"
+       *ngIf="bookmarks.length>0">
     <div *ngFor="let bookmarkCollections of bookmarks">
       <h1 class="text-center font-weight-bold mt-3">{{bookmarkCollections[0].group | titlecase}}</h1>
       <div class="card text-center mt-3 ml-2 mr-2"
@@ -19,5 +20,21 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="row"
+       *ngIf="bookmarks.length < 1">
+    <mat-card>
+      <div class="col">
+        <h2>The current amount of bookmark is <b>0</b>.</h2>
+      </div>
+      <div class="col text-center">
+        <button mat-mini-fab
+                matTooltip="Create bookmark"
+                (click)="changeToEditTab('change')"
+                color="primary">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+    </mat-card>
   </div>
 </div>

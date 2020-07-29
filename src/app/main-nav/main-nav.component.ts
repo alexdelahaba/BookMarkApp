@@ -19,4 +19,9 @@ export class MainNavComponent {
     );
 
   constructor(private breakpointObserver: BreakpointObserver) {}
+
+  changeTabToAdd(event) {
+    this.showDisplay = false;
+    this.showEdit = true;
+  }
 }
